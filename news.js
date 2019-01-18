@@ -943,7 +943,9 @@ function populateNewsChart() {
         $('#newschartcontainer').html($newsChart);
         drawPaths();
         setTimeout(function () { $("table.newstable > tbody > tr > td.nval").tooltip({
-            tooltipClass: "tooltip"
+            classes: {
+                "ui-tooltip": "tooltip"
+            }
         }); }, 0);
         setTimeout(function () { highlightColumns(); }, 100);
     }
