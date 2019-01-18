@@ -933,8 +933,7 @@ function populateNewsChart() {
     } else {
         $('#newschartcontainer').html($newsChart);
         drawPaths();
-        $("#newsChartcontainer > table.newstable > tbody > tr > td.nval").tooltip();
-        //setTimeout(function () { $("#newsChartcontainer > table.newstable > tbody > tr > td.nval").tooltip(); }, 0);
+        setTimeout(function () { $("table.newstable > tbody > tr > td.nval").tooltip(); }, 0);
         setTimeout(function () { highlightColumns(); }, 100);
     }
 }
