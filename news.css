@@ -384,5 +384,5 @@ svg .linedash {
 
 /*jquery-ui tooltip styling*/
 .tooltip {
-    
+    font: normal 11px arial;
 }
