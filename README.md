@@ -2,7 +2,7 @@
 
 NEWS2 is the latest version of the National Early Warning Score (NEWS), first produced in 2012 and updated in December 2017, which advocates a system to standardise the assessment and response to acute illness.
 
-[Demo Chart](https://naidihr.github.io/NEWS2/news.html)
+[Demo Chart](https://naidihr.github.io/NEWS2/chart.html)
 
 ## How NEWS works
 The NEWS is based on a simple aggregate scoring system in which a score is allocated to physiological measurements, already recorded in routine practice, when patients present to, or are being monitored in hospital. Six simple physiological parameters form the basis of the scoring system:
