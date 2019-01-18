@@ -942,7 +942,9 @@ function populateNewsChart() {
     } else {
         $('#newschartcontainer').html($newsChart);
         drawPaths();
-        setTimeout(function () { $("table.newstable > tbody > tr > td.nval").tooltip(); }, 0);
+        setTimeout(function () { $("table.newstable > tbody > tr > td.nval").tooltip({
+            tooltipClass: "tooltip",
+        }); }, 0);
         setTimeout(function () { highlightColumns(); }, 100);
     }
 }
@@ -1157,130 +1159,9 @@ function drawD3(chart, data, svg) {
         .attr("r", 5)
         .style("fill", linecolour);
 
-
-
-    //// Treating mouseover event (add tooltips)
-    //.on("mouseover", function (d) {
-    //    // Changing style of the circle and defining transition 
-    //    d3.select(this).transition().duration(500)
-    //        .style("fill", "#ff0000")
-    //        .attr("r", 8)
-    //        .style("font-size", 24);
-
-    //    // Displaying data value above circle
-    //    g.append("text")
-    //        .attr("x", function () { return d.X - 7 })
-    //        .attr("y", function () { return d.Y - 10 })
-    //        .text(function () { return d.text })
-    //        .attr("id", "text-id")
-
-    //})
-    //// Treating mouseout event
-    //.on("mouseout", function (d) {
-    //    // Putting style back to default values
-    //    d3.select(this)
-    //        .transition().duration(500)
-    //        .style("fill", "#0066cc")
-    //        .attr("r", 5)
-    //        .style("font-size", 12)
-
-    //    // Deleting extra elements
-    //    d3.select("#text-id").remove();
-    //    //d3.selectAll("line").remove();
-
-    //});
-
-
-
-
 }
 
 
-
-//********************************
-//Leader-line plugin examples. Add connecting Lines or Arrows to results (using leader line pluggin)
-//********************************
-function addLines(type) {
-    removeSvg();
-    setLines = true;
-    for (var chart = 1; chart < 9; chart++) {
-        if (chart != 4) {
-            start = null;
-            for (var col = 1; col < 21; col++) {
-                $cell = $('table.newstable > tbody > tr.nchart' + chart + ' > td.nval' + col + '.plotted');
-                if ($cell.length > 0) {
-                    end = $cell.get(0)
-                    if (type != 'arrow') {
-                        $cell.addClass("hideborder");
-                    }
-                    if ((start != null) && (start != end)) {
-                        if (type != 'arrow') {
-                            drawLine1(start, end); //connecting lines
-                        } else {
-                            drawLine2(start, end); //connecting arrows
-                        }
-                    }
-                    start = end;
-                }
-            }
-        }
-    }
-    hideloading();
-    //alert('ok')
-}
-
-//helper function call to leader line plugin (arrow format)
-function drawLine2(startobj, endobj) {
-    var myline = new LeaderLine(
-        startobj,
-        endobj,
-        {
-            startSocket: 'top',
-            endSocket: 'top',
-            animation: false,
-            size: 2,
-            path: 'arc',
-            color: '#0066cc'
-        }
-    );
-}
-
-//helper function call to leader line plugin (line format)
-var lastobj;
-function drawLine1(startobj, endobj) {
-    'use strict'
-    var starttext;
-    var endtext = $(endobj).text();
-    if (startobj != lastobj) {
-        starttext = $(startobj).text();
-    } else {
-        starttext = '';
-    }
-
-    var myline = new LeaderLine(
-        LeaderLine.pointAnchor(startobj, { x: '50%', y: '50%' }),
-        LeaderLine.pointAnchor(endobj, { x: '50%', y: '50%' }),
-        {
-            startSocket: 'top',
-            endSocket: 'top',
-            startLabel: LeaderLine.captionLabel(starttext, { color: 'black', offset: [-7, -20], fontSize: 10 }),
-            endLabel: LeaderLine.captionLabel(endtext, { color: 'black', offset: [-7, -20], fontSize: 10 }),
-            animation: false,
-            positionByWindowResize: false,
-            size: 3,
-            startPlug: 'disc',
-            endPlug: 'disc',
-            path: 'straight',
-            color: '#0066cc'
-        }
-    );
-}
-
-//Hide Lines (leader lines SVG canvas objects)
-function hideLines() {
-    setLines = false;
-    $('svg').hide();
-}
 
 
 jsonstr = '[{ "eformdataid": "57906", "date": "07-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "11:18", "resp": "12", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 95% on air", "oxsat": "95%", "oxsatscale": "1", "bps": "175", "bp": "175/123", "pulse": "100", "acvpu": "Alert", "temp": "37.1", "newstotal": "2", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57907", "date": "07-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "13:44", "resp": "25", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 94% on air", "oxsat": "94%", "oxsatscale": "1", "bps": "158", "bp": "158/103", "pulse": "97", "acvpu": "Alert", "temp": "36.5", "newstotal": "5", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57993", "date": "08-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "15:12", "resp": "18", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 95% on air", "oxsat": "95%", "oxsatscale": "1", "bps": "190", "bp": "190/134", "pulse": "104", "acvpu": "Alert", "temp": "36.4", "newstotal": "2", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57992", "date": "08-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "19:11", "resp": "21", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 93% on air", "oxsat": "93%", "oxsatscale": "1", "bps": "172", "bp": "172/99", "pulse": "109", "acvpu": "Alert", "temp": "36.4", "newstotal": "5", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57991", "date": "08-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "22:00", "resp": "14", "ox": "20L", "oxcode": "RM", "oxpercent": "", "oxflow": "20", "oxtitle": "Oxygen sats 96% on oxygen 20<br></td>l/min via Reservoir mask (RM)", "oxsat": "96%", "oxsatscale": "1", "bps": "160", "bp": "160/115", "pulse": "99", "acvpu": "Alert", "temp": "37", "newstotal": "3", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57990", "date": "09-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "06:10", "resp": "11", "ox": "20L", "oxcode": "RM", "oxpercent": "", "oxflow": "20", "oxtitle": "Oxygen sats 97% on oxygen 20<br></td>l/min via Reservoir mask (RM)", "oxsat": "97%", "oxsatscale": "1", "bps": "134", "bp": "134/104", "pulse": "104", "acvpu": "Confused", "temp": "36.2", "newstotal": "7", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57989", "date": "09-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "15:12", "resp": "18", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 95% on air", "oxsat": "95%", "oxsatscale": "1", "bps": "176", "bp": "176/100", "pulse": "104", "acvpu": "Alert", "temp": "36.4", "newstotal": "2", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57988", "date": "09-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "19:11", "resp": "19", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 92% on air", "oxsat": "92%", "oxsatscale": "1", "bps": "172", "bp": "172/99", "pulse": "109", "acvpu": "Alert", "temp": "36.4", "newstotal": "3", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57987", "date": "09-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "22:00", "resp": "13", "ox": "10L", "oxcode": "N", "oxpercent": "", "oxflow": "10", "oxtitle": "Oxygen sats 92% on oxygen 10<br></td>l/min via Nasal cannula (N)", "oxsat": "92%", "oxsatscale": "1", "bps": "134", "bp": "134/104", "pulse": "100", "acvpu": "Alert", "temp": "37", "newstotal": "5", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57986", "date": "09-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "22:05", "resp": "13", "ox": "10L", "oxcode": "N", "oxpercent": "", "oxflow": "10", "oxtitle": "Oxygen sats 92% on oxygen 10<br></td>l/min via Nasal cannula (N)<br/><br/>Scale 2 target range 88-92%", "oxsat": "92%", "oxsatscale": "2", "bps": "134", "bp": "134/104", "pulse": "100", "acvpu": "Alert", "temp": "36.2", "newstotal": "3", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57985", "date": "10-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "15:12", "resp": "18", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 95% on air<br></td><br/>Scale 2 target range 88-92%", "oxsat": "95%", "oxsatscale": "2", "bps": "165", "bp": "165/97", "pulse": "104", "acvpu": "Alert", "temp": "36.4", "newstotal": "1", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57984", "date": "10-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "19:11", "resp": "19", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 93% on air<br></td><br/>Scale 2 target range 88-92%", "oxsat": "93%", "oxsatscale": "2", "bps": "172", "bp": "172/99", "pulse": "109", "acvpu": "Alert", "temp": "36.4", "newstotal": "1", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57983", "date": "10-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "22:00", "resp": "13", "ox": "10L", "oxcode": "N", "oxpercent": "", "oxflow": "10", "oxtitle": "Oxygen sats 96% on oxygen 10<br></td>l/min via Nasal cannula (N)<br/><br/>Scale 2 target range 88-92%", "oxsat": "96%", "oxsatscale": "2", "bps": "160", "bp": "160/115", "pulse": "99", "acvpu": "Alert", "temp": "37", "newstotal": "5", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57982", "date": "11-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "06:10", "resp": "8", "ox": "40%", "oxcode": "V40", "oxpercent": "40", "oxflow": "14", "oxtitle": "Oxygen sats 99%<br></td>on oxygen 40%<br/>via Venturi mask (V) 14 l/min<br/><br/>Scale 2 target range 88-92%", "oxsat": "99%", "oxsatscale": "2", "bps": "134", "bp": "134/104", "pulse": "104", "acvpu": "Alert", "temp": "36.2", "newstotal": "9", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57981", "date": "11-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "15:12", "resp": "18", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 95% on air<br></td><br/>Scale 2 target range 88-92%", "oxsat": "95%", "oxsatscale": "2", "bps": "173", "bp": "173/108", "pulse": "104", "acvpu": "Confused", "temp": "36.4", "newstotal": "4", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57980", "date": "11-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "19:11", "resp": "19", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 87% on air<br></td><br/>Scale 2 target range 88-92%", "oxsat": "87%", "oxsatscale": "2", "bps": "172", "bp": "172/99", "pulse": "109", "acvpu": "Alert", "temp": "36.4", "newstotal": "2", "newsrepeat": "4 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57979", "date": "11-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "22:00", "resp": "18", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 86% on air<br></td><br/>Scale 2 target range 88-92%", "oxsat": "86%", "oxsatscale": "2", "bps": "159", "bp": "159/100", "pulse": "106", "acvpu": "Confused", "temp": "37.2", "newstotal": "5", "newsrepeat": "12 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "No" }, { "eformdataid": "57977", "date": "12-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "00:15", "resp": "10", "ox": "21L", "oxcode": "RM", "oxpercent": "", "oxflow": "21", "oxtitle": "Oxygen sats 88% on oxygen 21<br></td>l/min via Reservoir mask (RM)<br/><br/>Scale 2 target range 88-92%", "oxsat": "88%", "oxsatscale": "2", "bps": "175", "bp": "175/116", "pulse": "73", "acvpu": "Alert", "temp": "34.8", "newstotal": "6", "newsrepeat": "1 hour", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "Yes" }, { "eformdataid": "57976", "date": "12-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "11:18", "resp": "12", "ox": "28%", "oxcode": "H28", "oxpercent": "28", "oxflow": "15", "oxtitle": "Oxygen sats 85%<br></td>on oxygen 28%<br/>via Humidified oxygen (H) 15 l/min<br/><br/>Scale 2 target range 88-92%", "oxsat": "85%", "oxsatscale": "2", "bps": "175", "bp": "175/123", "pulse": "100", "acvpu": "Alert", "temp": "37.1", "newstotal": "5", "newsrepeat": "12 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "No" }, { "eformdataid": "57975", "date": "12-Jan", "formtitle": "NEWS2 score form<br></td>Entered by: Rhidian Bramley", "time": "13:44", "resp": "25", "ox": "on air", "oxcode": "", "oxpercent": "", "oxflow": "", "oxtitle": "Oxygen sats 84% on air<br></td><br/>Scale 2 target range 88-92%", "oxsat": "84%", "oxsatscale": "2", "bps": "158", "bp": "158/103", "pulse": "97", "acvpu": "Alert", "temp": "36.5", "newstotal": "6", "newsrepeat": "12 hours", "userinitials": "RB", "username": "Rhidian Bramley", "userid": "532", "advicefollowed": "No" }]';
