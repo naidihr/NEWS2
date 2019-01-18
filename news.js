@@ -563,8 +563,6 @@ function populateNewsChart() {
        // console.log("obs[" + i + "] = " + obsArray[i].date);
         var obs = new Object();
         var obs = obsArray[i];
-    // return;
-    // $newstablegrid.find("tbody > tr").reverse().each(function () {
 
     col++;
     newstotal = 0;
@@ -573,45 +571,6 @@ function populateNewsChart() {
     redscore = false;
 
     if (col > 0) {
-
-        
-
-
-        //populate from NEWS table. NB this could be done via JSON.
-        //obs.eformdataid = $(this).find("td.formdate").attr("eformdataid")
-        //obs.date = $.trim($(this).find("td.formdate").text());
-        //obs.formtitle = $(this).find("td.formdate").attr("titlestr");
-        //obs.time = $.trim($(this).find("td.formtime").text());
-        //obs.resp = $.trim($(this).find("td.formresp").text());
-        //obs.ox = $.trim($(this).find("td.formO2").text());
-        //obs.oxcode = $(this).find("td.formO2").attr("code");
-        //obs.oxpercent = $(this).find("td.formO2").attr("percent");
-        //obs.oxflow = $(this).find("td.formO2").attr("flow");
-        //obs.oxtitle = $(this).find("td.formO2").attr("titlestr");
-        //obs.oxsat = $.trim($(this).find("td.formoxsat").text());
-        //obs.oxsatscale = $(this).find("td.formoxsat").attr("scale");
-        //obs.bps = $.trim($(this).find("td.formbps").text());
-        //obs.bp = $.trim($(this).find("td.formbp").text());
-        //obs.pulse = $.trim($(this).find("td.formpulse").text());
-        //obs.acvpu = $.trim($(this).find("td.formacvpu").text());
-        //obs.temp = $.trim($(this).find("td.formtemp").text());
-        //obs.newstotal = $.trim($(this).find("td.formnews").text());
-        //obs.newsrepeat = $(this).find("td.formnews").attr("repeat");
-        //obs.userinitials = $(this).find("td.formnews").attr("userinitials");
-        //obs.username = $(this).find("td.formnews").attr("username");
-        //obs.userid = $(this).find("td.formnews").attr("userid");
-        //obs.advicefollowed = $.trim($(this).find("td.formadvice").text());
-
-
-        //Unit test JSobject
-        //txt = "<table border='1'>"
-        //for (x in obs) {
-        //    txt += "<tr><td>" + x + "</td><td>" + obs[x] + "</td></tr>";
-        //}
-        //txt = txt + "</table>"
-        //txtstr = txtstr + txt;
-        //$('#newsChartcontainer').html(txtstr);
-
 
         //Date
         row = 1;
@@ -647,11 +606,12 @@ function populateNewsChart() {
                     newstotal += score * 1;
                     newstotalstr = newstotalstr + "resp[" + score + "]";
                     if (score == 3) { redscore = true };
+                    title = "Resps " + val + " breaths/min";
                 }
             }
         }
         if (val != '') {
-            plotChart(row, col, val, plotclass);
+            plotChart(row, col, val, plotclass, title);
         }
 
 
@@ -670,7 +630,7 @@ function populateNewsChart() {
             showScale2 = true;
             scale = patient.oxsatscale;
         }
-        //console.log("patient.oxsatscale=" + patient.oxsatscale + ", scale=" + scale);
+
         val = val.replace('%', '');
         if (val != '') {
             if (scale == '1') {
@@ -811,16 +771,21 @@ function populateNewsChart() {
                     newstotal += score * 1;
                     newstotalstr = newstotalstr + ", pulse[" + score + "]";
                     if (score == 3) { redscore = true };
+                    title = "Pulse " + val + " beats/min";
+                    if (obs.pulsepattern != '') {
+                        title = title + " " + obs.pulsepattern.toLowerCase();
+                    }
                 }
             }
         }
         if (val != '') {
-            plotChart(row, col, val, plotclass);
+            plotChart(row, col, val, plotclass, title);
         }
 
 
         //Conciousness
         val = obs.acvpu;
+        title = val;
         val = val.substring(0, 1);
         row = 58;
         if (val != '') {
@@ -844,7 +809,7 @@ function populateNewsChart() {
             newstotal += score * 1;
             newstotalstr = newstotalstr + ", acvpu[" + score + "]";
             if (score == 3) { redscore = true };
-            plotChart(row, col, val, plotclass);
+            plotChart(row, col, val, plotclass, title);
         }
 
 
@@ -859,11 +824,12 @@ function populateNewsChart() {
                     newstotal += score * 1;
                     newstotalstr = newstotalstr + ", temp[" + score + "]";
                     if (score == 3) { redscore = true };
+                    title = "Temp " + val + " celcius";
                 }
             }
         }
         if (val != '') {
-            plotChart(row, col, val, plotclass);
+            plotChart(row, col, val, plotclass, title);
         }
 
 
@@ -944,7 +910,7 @@ function populateNewsChart() {
 
     }
 }
-    //});
+
 
     //show/hide scale 1+2
     if ((showScale1 === false) && (showScale2 === false)) { showScale1 = true }; //show scale 1 if no data
