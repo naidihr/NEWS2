@@ -20,4 +20,6 @@ A score is allocated to each parameter as they are measured, with the magnitude 
 
 This is a pragmatic approach, with a key emphasis on system-wide standardisation and the use of physiological  parameters that are already routinely measured in NHS hospitals and in prehospital care, recorded on a standardised clinical chart – the NEWS2 chart.
 
+[National Early Warning Score (NEWS) 2](https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2)
+
 Reproduced from: Royal College of Physicians. National Early Warning Score (NEWS) 2: Standardising the assessment of acute-illness severity in the NHS. Updated report of a working party. London: RCP, 2017.
