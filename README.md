@@ -2,6 +2,10 @@
 
 NEWS2 is the latest version of the National Early Warning Score (NEWS), first produced in 2012 and updated in December 2017, which advocates a system to standardise the assessment and response to acute illness.
 
+## Sample Chart
+
+This repsoitory contains a sample NEWS2 chart that can be used to populate NEWS2 observation data via json.
+
 [Demo Chart](https://naidihr.github.io/NEWS2/chart.html)
 
 ## How NEWS works
