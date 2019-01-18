@@ -723,7 +723,7 @@ function populateNewsChart() {
             }
         }
         if (val != '') {
-            plotChart(row, col, val, plotclass, 'Systolic bp ' + val + ' mmHg');
+            plotChart(row, col, val, plotclass, 'BP systolic ' + val + ' mmHg');
         }
 
 
@@ -744,7 +744,7 @@ function populateNewsChart() {
                         plotChart(startrow + x, col, null, 'systolic');
                     }
                     if ((sys * 1 >= bpMinArray[x] * 1) && (dia * 1 <= bpMinArray[x] * 1)) {
-                        plotChart(startrow + x, col, null, 'diastolicrange', 'bp ' + val + ' mmHg');
+                        plotChart(startrow + x, col, null, 'diastolicrange', 'BP ' + val + ' mmHg');
                     }
                 }
 
@@ -933,7 +933,8 @@ function populateNewsChart() {
     } else {
         $('#newschartcontainer').html($newsChart);
         drawPaths();
-        setTimeout(function () { $("#newsChartcontainer > table.newstable > tbody > tr > td.nval").tooltip(); }, 0);
+        $("#newsChartcontainer > table.newstable > tbody > tr > td.nval").tooltip();
+        //setTimeout(function () { $("#newsChartcontainer > table.newstable > tbody > tr > td.nval").tooltip(); }, 0);
         setTimeout(function () { highlightColumns(); }, 100);
     }
 }
