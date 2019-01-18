@@ -344,6 +344,15 @@ $(function () {
         }, 50, "resize1");
 
     });
+    
+    //allow html tooltips
+    $.widget("ui.tooltip", $.ui.tooltip, {
+    options: {
+        content: function () {
+            return $(this).prop('title');
+        }
+    }
+});
 
 });
 
