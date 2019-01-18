@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+
+    <script src="chart.js"></script>
+    <link href="chart.css" rel="stylesheet" />
+
+</head>
+<body>
+    <script>
+        $(function () {
+            displayPatientBanner();
+            drawNews2Chart();
+        });
+    </script>
+    <div id="screen">
+        <div id="pagetitle">
+            <div class="buttons">
+                <a id="togglescalebtn" href="#togglescale">Toggle SpO<sub>2</sub> Scale</a>
+            </div>
+            <h1>NEWS2 Chart</h1>
+        </div>
+        <div id="patientbanner"></div>
+        <div id="newschartcontainer"></div>
+    </div>
+</body>
+</html>
