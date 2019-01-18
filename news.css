@@ -8,8 +8,8 @@ h1 {
 }
 
 div.buttons {
-    /*float:right;*/
-    display: none;
+    width: 140px;
+    float: right;
 }
 
     div.buttons > a {
