@@ -384,5 +384,14 @@ svg .linedash {
 
 /*jquery-ui tooltip styling*/
 .tooltip {
-    font: normal 11px arial;
+    font: normal 12px arial;
+    radius: 4px !important;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin: 50px;
+    text-align: center;
+    font: bold 14px ;
+    font-stretch: condensed;
+    text-decoration: none;
+    box-shadow: 0 0 10px #0066cc;
 }
