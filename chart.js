@@ -1,5 +1,8 @@
-﻿//National Early Warning t 2 (NEWS2) chart © Royal College of Physicians 2017
-//Chart Render Rhidian Bramley 2018
+﻿/*
+National Early Warning Score (NEWS) 2 chart © Royal College of Physicians 2017
+Reproduced from: Royal College of Physicians.National Early Warning Score (NEWS) 2: Standardising the assessment of acute- illness severity in the NHS.Updated report of a working party.London: RCP, 2017.
+Chart Render © Dr Rhidian Bramley 2018
+*/
 
 'use strict'
 
@@ -317,12 +320,11 @@ var pathColorArray = [
 //Base variables
 var $newsChart;
 var chartsize = 20; //number of result columns to display
-var setLines = false; //do not display connecting leader-lines by default
 var setPaths = true; // display connecting d3 paths by default
 var setPathMultiColor = true; //display paths colors by pathColorArray.
 var showScale1 = false; //hide Oxygen saturation scale 1 by default - reveal if contains data
 var showScale2 = false; //hide Oxygen saturation scale 2 by default - reveal if contains data
-var obstitledatetime = "" //holder for chart obs tooltip;
+var obstitledatetime = "" //placeholder for chart obs tooltip;
 
 //sample patient data
 var patient = new Object; //patient object
@@ -578,7 +580,7 @@ function populateNewsChart() {
     var newstotalstr = '';
     var newstotal = 0;
     var mewstotal = 0; //support transition from MEWS to NEWS - records MEWS value on the form.
-    
+
 
     showScale1 = false; //hide Oxygen saturation scale 1 by default
     showScale2 = false; //hide Oxygen saturation scale 2 by default
@@ -607,27 +609,26 @@ function populateNewsChart() {
 
             if (col > 0) {
 
-                //Date
+                //Date  
+                obstitledatetime = obs.date + " " + obs.time;
                 row = 1;
                 val = obs.date;
                 val = val.replace("-", "<br/>");
+                title = "NEWS observations";
                 //title = obs.formtitle;
                 //title = title + "<br/>Click to view the form";
                 eformdataid = obs.eformdataid;
                 if (val != '') {
-                    plotChart(row, col, val);
+                    plotChart(row, col, val, plotclass, title);
                     //$obj = $newsChart.find('tbody > tr:nth-child(' + row + ') > td.nval' + col)
-                    //$obj.html(val);
                     //$obj.attr('eformdataid', eformdataid);
                     //$obj.css("cursor", "pointer");
-                    //$obj.click(function () { document.location.href = "/eforms/EformPatientXML.asp?EFormDataID=" + $(this).attr('eformdataid') });
-                    //$obj.attr("title", title)   
+                    //$obj.click(function () { document.location.href = "/eforms/EformPatientXML.asp?EFormDataID=" + $(this).attr('eformdataid') });  
                 }
 
                 //Time
                 row = 2;
                 val = obs.time;
-                obstitledatetime = obs.date + " " + obs.time;
                 plotChart(row, col, val);
 
 
@@ -1055,7 +1056,6 @@ function toggleColour() {
 //Remove all SVG and classes
 function removeSvg() {
     $('table.newstable > tbody > tr > td.nval').removeClass("hideborder");
-    setLines = false;
     setPaths = false;
     $('svg').remove();
 }
