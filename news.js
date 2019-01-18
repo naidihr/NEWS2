@@ -772,7 +772,7 @@ function populateNewsChart() {
                     newstotalstr = newstotalstr + ", pulse[" + score + "]";
                     if (score == 3) { redscore = true };
                     title = "Pulse " + val + " beats/min";
-                    if (obs.pulsepattern != '') {
+                    if (obs.pulsepattern != undefined) {
                         title = title + " " + obs.pulsepattern.toLowerCase();
                     }
                 }
