@@ -1059,6 +1059,11 @@ function populateNewsChart() {
                 });
             }, 0);
             setTimeout(function () { highlightColumns(); }, 100);
+
+            //alternate RAG color scheme
+            //$("table.newschart > tbody > tr > td.nval").addClass("altcolor");
+
+            //copyright notice
             $('#newschartcontainer').append('<div class="copyright">National Early Warning Score 2 (NEWS2) © Royal College of Physicians 2017</div>');
         }
 

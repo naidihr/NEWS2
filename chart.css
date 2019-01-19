@@ -375,21 +375,11 @@ table.newschart > tbody > tr > td.altcolor.redrow {
     }
 
 
-/*tooltips*/
-span.red {
-    color: red;
-}
-
-div.obstitledatetime {
-    font: bold 10px arial;
-    padding: 2px;
-}
-
-
 /*hide O2 delivery scale 2 chart by default*/
 table.newschart > tbody > tr.nchart3 > td {
     /* display: none*/
 }
+
 /*add split section on O2 delivery scale 2 (with/without O2)*/
 table.newschart > tbody > tr.nchartsplit > td.nrange {
     border-bottom: 1px solid #333;
@@ -412,6 +402,8 @@ table.newschart > tbody > tr.nchart9 > td {
     table.newschart > tbody > tr.nchart9 > td.plotted {
         border: 1px solid #0066cc;
     }
+
+
 /*chart 10 (bottom section repeat hrs etc)*/
 table.newschart > tbody > tr.nchart10 > td.plotted {
     border: 1px solid #333;
@@ -433,6 +425,7 @@ div.newsresponse {
 div.newsscores {
     font: normal 8px arial;
 }
+
 /*D3 svg styling*/
 #newschartcontainer {
     position: relative;
@@ -444,18 +437,13 @@ div.newsscores {
 
 svg .line {
     fill: none;
-    /*stroke: #0066cc;*/
     stroke-width: 3px;
 }
 
 svg .linedash {
     fill: none;
-    /*stroke: #0066cc;*/
     stroke-width: 3px;
 }
-/*#svg1 .line {
-    stroke: #FF0000;
-}*/
 
 .text-id, #text-id {
     font: normal 10px arial;
@@ -471,4 +459,13 @@ svg .linedash {
     font-stretch: condensed;
     text-decoration: none;
     box-shadow: 0 0 10px #0066cc;
+}
+
+span.red {
+    color: red;
+}
+
+div.obstitledatetime {
+    font: bold 10px arial;
+    padding: 2px;
 }
