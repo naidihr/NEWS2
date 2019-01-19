@@ -37,7 +37,7 @@ h1 {
     font: bold 20px arial;
 }
 
-sub{
+sub {
     font-size: 50%;
 }
 
@@ -49,8 +49,10 @@ div.buttons {
     div.buttons > a {
         font: bold 12px arial;
         display: inline-block;
-        background: #B1BBDE;
-        color: #000;
+        /*background: #B1BBDE;
+        color: #000;*/
+        background: #9933ff;
+        color: white;
         text-align: center;
         padding: 7px;
         width: 140px;
