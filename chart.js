@@ -1059,7 +1059,7 @@ function populateNewsChart() {
                 });
             }, 0);
             setTimeout(function () { highlightColumns(); }, 100);
-
+            $('#newschartcontainer').append('<div class="copyright">National Early Warning Score 2 (NEWS2) © Royal College of Physicians 2017</div>');
         }
 
     });
@@ -1084,7 +1084,7 @@ function plotChart(row, col, val, pclass, title) {
 function formatGuidance(array) {
     var str = '<div class="newsresponse"><ul>';
     for (var i = 0; i < array.length; i++) {
-        str += '<li>'+array[i]+'</li>';
+        str += '<li>' + array[i] + '</li>';
     }
     str += '</ul></div>';
     return str;

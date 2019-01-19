@@ -64,6 +64,10 @@ div.buttons {
             color: white;
         }
 
+div.copyright{
+    font: normal 11px arial;
+}
+
 #newschartcontainer {
 }
 
