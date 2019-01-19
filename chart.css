@@ -168,11 +168,11 @@ table.newstable > tbody > tr > td.nval {
     background: #fff;
 }
 
-    table.newstable > tbody > tr > td.nval.colhover {
+    table.newstable > tbody > tr > td.nval.colgrey {
         background: #eee;
     }
 
-        table.newstable > tbody > tr > td.nval.colhover.select {
+        table.newstable > tbody > tr > td.nval.colgrey.colhover {
             background: #fff;
             border-left: 2px solid #000 !important;
             border-right: 2px solid #000 !important;
@@ -255,6 +255,18 @@ table.newstable > tbody > tr.nscore2 > td.nval {
 
 table.newstable > tbody > tr.nscore3 > td.nval {
     background: #F69781;
+}
+
+table.newstable > tbody > tr.nscore1 > td.nval.plotted.colgrey.colhover {
+    background: #FFF2AC !important;
+}
+
+table.newstable > tbody > tr.nscore2 > td.nval.plotted.colgrey.colhover {
+    background: #FCC98A !important;
+}
+
+table.newstable > tbody > tr.nscore3 > td.nval.plotted.colgrey.colhover {
+    background: #F69781 !important;
 }
 
 

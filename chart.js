@@ -614,12 +614,12 @@ function populateNewsChart() {
                 row = 1;
                 val = obs.date;
                 val = val.replace("-", "<br/>");
-                title = "NEWS observations";
+                title = "NEWS2 observations";
                 //title = obs.formtitle;
                 //title = title + "<br/>Click to view the form";
                 eformdataid = obs.eformdataid;
                 if (val != '') {
-                    plotChart(row, col, val, plotclass, title);
+                    plotChart(row, col, val, null, title);
                     //$obj = $newsChart.find('tbody > tr:nth-child(' + row + ') > td.nval' + col)
                     //$obj.attr('eformdataid', eformdataid);
                     //$obj.css("cursor", "pointer");
@@ -791,15 +791,9 @@ function populateNewsChart() {
 
 
                 //bp diastolic and range
-                val = obs.bp;
+                dia = obs.bpd;
                 startrow = 30
                 row = 30;
-                //val = val.replace('%', '');
-                dia = '';
-                if (val.indexOf("/") != -1) {
-                    sys = val.substring(0, val.indexOf("/"));
-                    dia = val.substring(val.indexOf("/") + 1, val.length);
-                }
                 if ($.isNumeric(dia)) {
                     for (var x = 0; x < bpMaxArray.length; x++) {
                         if ($.isNumeric(sys)) {
@@ -807,7 +801,7 @@ function populateNewsChart() {
                                 plotChart(startrow + x, col, null, 'systolic');
                             }
                             if ((sys * 1 >= bpMinArray[x] * 1) && (dia * 1 <= bpMinArray[x] * 1)) {
-                                plotChart(startrow + x, col, null, 'diastolicrange', 'BP ' + val + ' mmHg');
+                                plotChart(startrow + x, col, null, 'diastolicrange', 'BP ' + sys + '/' + dia + ' mmHg');
                             }
                         }
 
@@ -991,6 +985,7 @@ function populateNewsChart() {
             }, 0);
             setTimeout(function () { highlightColumns(); }, 100);
         }
+
     });
 }
 
@@ -1014,12 +1009,12 @@ function plotChart(row, col, val, pclass, title) {
 function highlightColumns() {
     $('table.newstable > tbody > tr.ndate > td.nval').hover(function () {
         var col = $(this).attr("col");
-        $('table.newstable > tbody > tr > td.nval').addClass("colhover");
-        $('table.newstable > tbody > tr > td.nval' + col).addClass("select");
+        $('table.newstable > tbody > tr > td.nval').addClass("colgrey");
+        $('table.newstable > tbody > tr > td.nval.nval' + col).addClass("colhover");
     }, function () {
         var col = $(this).attr("col");
-        $('table.newstable > tbody > tr > td.nval').removeClass("colhover");
-        $('table.newstable > tbody > tr > td.nval' + col).removeClass("select");
+        $('table.newstable > tbody > tr > td.nval').removeClass("colgrey");
+        $('table.newstable > tbody > tr > td.nval.nval' + col).removeClass("colhover");
     });
 }
 
