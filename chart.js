@@ -891,7 +891,7 @@ function populateNewsChart() {
 
 
                 //NEWS total
-                val = newstotal; //calculated by form
+                val = newstotal; //calculated by chart
                 row = 71;
 
                 var plotclassnews = null;
