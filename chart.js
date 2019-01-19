@@ -8,299 +8,361 @@ Chart Render © Dr Rhidian Bramley 2018
 
 
 //Define NEWS2 table chart section range arrays
+var news = {
+    resp: {
+        name: "Respirations",
+        units: "breaths/min",
+        rangeArray: [
+            "≥25",
+            "21–24",
+            "18–20",
+            "15–17",
+            "12–14",
+            "9–11",
+            "≤8"
+        ],
+        scoreArray: [
+            "3",
+            "2",
+            "0",
+            "0",
+            "0",
+            "1",
+            "3"
+        ],
+        minArray: [
+            "25",
+            "21",
+            "18",
+            "15",
+            "12",
+            "9",
+            "0"
+        ],
+        maxArray: [
+            "200",
+            "24",
+            "20",
+            "17",
+            "14",
+            "11",
+            "8"
+        ]
+    },
+    sat1: {
+        name: "SpO<sub>2</sub> scale 1",
+        units: "Oxygen saturation %",
+        rangeArray: [
+            "≥96",
+            "94–95",
+            "92–93",
+            "≤91"
+        ],
+        scoreArray: [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        minArray: [
+            "96",
+            "94",
+            "92",
+            "0"
+        ],
+        maxArray: [
+            "100",
+            "95",
+            "93",
+            "91"
+        ]
+    },
+    sat2: {
+        name: "SpO<sub>2</sub> scale 2",
+        units: "Oxygen saturation %",
+        rangeArray: [
+            "≥97 on O<sub>2</sub>",
+            "95–96 on O<sub>2</sub>",
+            "93–94 on O<sub>2</sub>",
+            "≥93 on air",
+            "88–92",
+            "86–87",
+            "84–85",
+            "≤83%"
+        ],
+        scoreArray: [
+            "3",
+            "2",
+            "1",
+            "0",
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        minArray: [
+            "97",
+            "95",
+            "93",
+            "93",
+            "88",
+            "86",
+            "84",
+            "0"
+        ],
+        maxArray: [
+            "100",
+            "96",
+            "94",
+            "100",
+            "92",
+            "87",
+            "85",
+            "83"
+        ]
+    },
+    pulse: {
+        name: "Pulse",
+        units: "beats/min",
+        rangeArray: [
+            "≥131",
+            "121–130",
+            "111–120",
+            "101–110",
+            "91–100",
+            "81–90",
+            "71–80",
+            "61–70",
+            "51–60",
+            "41–50",
+            "31–40",
+            "≤30"
+        ],
+        scoreArray: [
+            "3",
+            "2",
+            "2",
+            "1",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "3",
+            "3"
+        ],
+        minArray: [
+            "131",
+            "121",
+            "111",
+            "101",
+            "91",
+            "81",
+            "71",
+            "61",
+            "51",
+            "41",
+            "31",
+            "0"
+        ],
+        maxArray: [
+            "500",
+            "130",
+            "120",
+            "110",
+            "100",
+            "90",
+            "80",
+            "70",
+            "60",
+            "50",
+            "40",
+            "30"
+        ]
+    },
+    bp: {
+        name: "Blood pressure",
+        units: "mmHg",
+        rangeArray: [
+            "≥220",
+            "201–219",
+            "181–200",
+            "161–180",
+            "141–160",
+            "121–140",
+            "111–120",
+            "101–110",
+            "91–100",
+            "81–90",
+            "71–80",
+            "61–70",
+            "51–60",
+            "≤50"
+        ],
+        scoreArray: [
+            "3",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "2",
+            "3",
+            "3",
+            "3",
+            "3",
+            "3"
+        ],
+        minArray: [
+            "220",
+            "201",
+            "181",
+            "161",
+            "141",
+            "121",
+            "111",
+            "101",
+            "91",
+            "81",
+            "71",
+            "61",
+            "51",
+            "0"
+        ],
+        maxArray: [
+            "500",
+            "219",
+            "200",
+            "180",
+            "160",
+            "140",
+            "120",
+            "110",
+            "100",
+            "90",
+            "80",
+            "70",
+            "60",
+            "50"
+        ]
+    },
+    acvpu: {
+        name: "Conciousness",
+        units: "ACVPU",
+        rangeArray: [
+            "Alert",
+            "Confusion",
+            "V",
+            "P",
+            "U"
+        ],
+        scoreArray: [
+            "0",
+            "3",
+            "3",
+            "3",
+            "3"
+        ]
+    },
+    temp: {
+        name: "Temperature",
+        units: "℃",
+        rangeArray: [
+            "≥39.1°",
+            "38.1–39.0°",
+            "37.1–38.0°",
+            "36.1–37.0°",
+            "35.1–36.0°",
+            "≤35.0°"
+        ],
+        scoreArray: [
+            "2",
+            "11",
+            "0",
+            "0",
+            "1",
+            "3"
+        ],
+        minArray: [
+            "39.1",
+            "38.1",
+            "37.1",
+            "36.1",
+            "35.1",
+            "0"
+        ],
+        maxArray: [
+            "50",
+            "39.0",
+            "38.0",
+            "37.0",
+            "36.0",
+            "35.0"
+        ]
+    }
 
-var respArray = [
-    "≥25",
-    "21–24",
-    "18–20",
-    "15–17",
-    "12–14",
-    "9–11",
-    "≤8"
-]
+}
 
 
-var respScoreArray = [
-    "3",
-    "2",
-    "0",
-    "0",
-    "0",
-    "1",
-    "3"
-]
 
-var respMinArray = [
-    "25",
-    "21",
-    "18",
-    "15",
-    "12",
-    "9",
-    "0"
-]
+//NEWS2 guidance
+var newsGuidance = {
+    none: {
+        risk: "low",
+        range: "Total 0",
+        threshold: "Routine monitoring",
+        repeat: "Minimum 12 hourly",
+        response: [
+            "Continue routine NEWS monitoring"
+        ]
+    },
+    low: {
+        risk: "low",
+        range: "Total 1–4",
+        threshold: "Ward-based response",
+        repeat: "Minimum 4–6 hourly",
+        response: [
+            "Inform registered nurse, who must assess the patient",
+            "Registered nurse decides whether increased frequency of monitoring and/or escalation of care is required"
+        ]
+    },
+    lowmedium: {
+        risk: "low-medium",
+        range: "3 in single parameter",
+        threshold: "Urgent ward-based response",
+        repeat: "Minimum 1 hourly",
+        response: [
+            "Registered nurse to inform medical team caring for the patient, who will review and decide whether escalation of care is necessary"
+        ]
 
-var respMaxArray = [
-    "200",
-    "24",
-    "20",
-    "17",
-    "14",
-    "11",
-    "8"
-]
-
-var ox1Array = [
-    "≥96",
-    "94–95",
-    "92–93",
-    "≤91"
-]
-
-var ox1ScoreArray = [
-    "0",
-    "1",
-    "2",
-    "3"
-]
-
-var ox1MinArray = [
-    "96",
-    "94",
-    "92",
-    "0"
-]
-
-var ox1MaxArray = [
-    "100",
-    "95",
-    "93",
-    "91"
-]
-
-var ox2Array = [
-    "≥97 on O<sub>2</sub>",
-    "95–96 on O<sub>2</sub>",
-    "93–94 on O<sub>2</sub>",
-    "≥93 on air",
-    "88–92",
-    "86–87",
-    "84–85",
-    "≤83%"
-]
-
-var ox2ScoreArray = [
-    "3",
-    "2",
-    "1",
-    "0",
-    "0",
-    "1",
-    "2",
-    "3"
-]
-
-var ox2MinArray = [
-    "97",
-    "95",
-    "93",
-    "93",
-    "88",
-    "86",
-    "84",
-    "0"
-]
-
-var ox2MaxArray = [
-    "100",
-    "96",
-    "94",
-    "100",
-    "92",
-    "87",
-    "85",
-    "83"
-]
-
-var pulseArray = [
-    "≥131",
-    "121–130",
-    "111–120",
-    "101–110",
-    "91–100",
-    "81–90",
-    "71–80",
-    "61–70",
-    "51–60",
-    "41–50",
-    "31–40",
-    "≤30"
-]
-
-var pulseScoreArray = [
-    "3",
-    "2",
-    "2",
-    "1",
-    "1",
-    "0",
-    "0",
-    "0",
-    "0",
-    "1",
-    "3",
-    "3"
-]
-
-var pulseMinArray = [
-    "131",
-    "121",
-    "111",
-    "101",
-    "91",
-    "81",
-    "71",
-    "61",
-    "51",
-    "41",
-    "31",
-    "0"
-]
-
-var pulseMaxArray = [
-    "500",
-    "130",
-    "120",
-    "110",
-    "100",
-    "90",
-    "80",
-    "70",
-    "60",
-    "50",
-    "40",
-    "30"
-]
-
-var bpArray = [
-    "≥220",
-    "201–219",
-    "181–200",
-    "161–180",
-    "141–160",
-    "121–140",
-    "111–120",
-    "101–110",
-    "91–100",
-    "81–90",
-    "71–80",
-    "61–70",
-    "51–60",
-    "≤50"
-]
-
-var bpScoreArray = [
-    "3",
-    "0",
-    "0",
-    "0",
-    "0",
-    "0",
-    "0",
-    "1",
-    "2",
-    "3",
-    "3",
-    "3",
-    "3",
-    "3"
-]
-
-var bpMinArray = [
-    "220",
-    "201",
-    "181",
-    "161",
-    "141",
-    "121",
-    "111",
-    "101",
-    "91",
-    "81",
-    "71",
-    "61",
-    "51",
-    "0"
-]
-
-var bpMaxArray = [
-    "500",
-    "219",
-    "200",
-    "180",
-    "160",
-    "140",
-    "120",
-    "110",
-    "100",
-    "90",
-    "80",
-    "70",
-    "60",
-    "50"
-]
-
-var acvpuArray = [
-    "Alert",
-    "Confusion",
-    "V",
-    "P",
-    "U"
-]
-
-var acvpuScoreArray = [
-    "0",
-    "3",
-    "3",
-    "3",
-    "3"
-]
-
-var tempArray = [
-    "≥39.1°",
-    "38.1–39.0°",
-    "37.1–38.0°",
-    "36.1–37.0°",
-    "35.1–36.0°",
-    "≤35.0°"
-]
-
-var tempScoreArray = [
-    "2",
-    "11",
-    "0",
-    "0",
-    "1",
-    "3"
-]
-
-var tempMinArray = [
-    "39.1",
-    "38.1",
-    "37.1",
-    "36.1",
-    "35.1",
-    "0"
-]
-
-var tempMaxArray = [
-    "50",
-    "39.0",
-    "38.0",
-    "37.0",
-    "36.0",
-    "35.0"
-]
+    },
+    medium: {
+        risk: "medium",
+        range: "Total 5-6",
+        threshold: "Urgent response threshold",
+        repeat: "Minimum 1 hourly",
+        response: [
+            "Registered nurse to immediately inform the medical team caring for the patient",
+            "Registered nurse to request urgent assessment by a clinician or team with core competencies in the care of acutely ill patients",
+            "Provide clinical care in an environment with monitoring facilities"
+        ]
+    },
+    high: {
+        risk: "high",
+        range: "Total 7 or more",
+        threshold: "Emergency response threshold",
+        repeat: "Continuous monitoring of vital signs",
+        response: [
+            "Registered nurse to immediately inform the medical team caring for the patient – this should be at least at specialist registrar level",
+            "Emergency assessment by a team with critical care competencies, including practitioner(s) with advanced airway management skills",
+            "Consider transfer of care to a level 2 or 3 clinical care facility, ie higher-dependency unit or ICU",
+            "Clinical care in an environment with monitoring facilities"
+        ]
+    }
+}
 
 //Optional colour styling for the paths (lines)
 var pathColorArray = [
@@ -402,11 +464,7 @@ function displayPatientBanner() {
 //Create/Draw the standard NEWS2 chart (unpopulated)
 function drawNews2Chart() {
 
-    //console.log("drawNews2Chart()")
-    //clear chart container
-    $('#newschartcontainer').html('');
-
-    $newsChart = $('<table class="newstable"></table>');
+    $newsChart = $('<table class="newschart"></table>');
     $newsChart.append("<tbody>");
     var newsChartCels = '';
     var newsChartRow = '';
@@ -428,8 +486,8 @@ function drawNews2Chart() {
 
     //respirations
     newsChartRows = "";
-    for (var i = 0; i < respArray.length; i++) {
-        newsChartRow = '<tr class="nrow nchart1 nscore' + respScoreArray[i] + '"><td class="nrange">' + respArray[i] + '</td>' + newsChartCels + '</tr>';
+    for (var i = 0; i < news.resp.rangeArray.length; i++) {
+        newsChartRow = '<tr class="nrow nchart1 nscore' + news.resp.scoreArray[i] + '"><td class="nrange">' + news.resp.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         newsChartRows = newsChartRows + newsChartRow;
     }
 
@@ -437,8 +495,8 @@ function drawNews2Chart() {
 
     //O2 sats scale 1
     newsChartRows = "";
-    for (var i = 0; i < ox1Array.length; i++) {
-        newsChartRow = '<tr class="nrow nchart2 nscore' + ox1ScoreArray[i] + '"><td class="nrange">' + ox1Array[i] + '</td>' + newsChartCels + '</tr>';
+    for (var i = 0; i < news.sat1.rangeArray.length; i++) {
+        newsChartRow = '<tr class="nrow nchart2 nscore' + news.sat1.scoreArray[i] + '"><td class="nrange">' + news.sat1.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         newsChartRows = newsChartRows + newsChartRow;
     }
 
@@ -447,11 +505,11 @@ function drawNews2Chart() {
 
     //O2 sats scale 2
     newsChartRows = "";
-    for (var i = 0; i < ox2Array.length; i++) {
+    for (var i = 0; i < news.sat2.rangeArray.length; i++) {
         if (i == 2) {
-            newsChartRow = '<tr class="nrow nchart3 nchartsplit nscore' + ox2ScoreArray[i] + '"><td class="nrange">' + ox2Array[i] + '</td>' + newsChartCels + '</tr>';
+            newsChartRow = '<tr class="nrow nchart3 nchartsplit nscore' + news.sat2.scoreArray[i] + '"><td class="nrange">' + news.sat2.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         } else {
-            newsChartRow = '<tr class="nrow nchart3 nscore' + ox2ScoreArray[i] + '"><td class="nrange">' + ox2Array[i] + '</td>' + newsChartCels + '</tr>';
+            newsChartRow = '<tr class="nrow nchart3 nscore' + news.sat2.scoreArray[i] + '"><td class="nrange">' + news.sat2.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         }
         newsChartRows = newsChartRows + newsChartRow;
     }
@@ -471,8 +529,8 @@ function drawNews2Chart() {
 
     //bp
     newsChartRows = "";
-    for (var i = 0; i < bpArray.length; i++) {
-        newsChartRow = '<tr class="nrow nchart5 nscore' + bpScoreArray[i] + '"><td class="nrange">' + bpArray[i] + '</td>' + newsChartCels + '</tr>';
+    for (var i = 0; i < news.bp.rangeArray.length; i++) {
+        newsChartRow = '<tr class="nrow nchart5 nscore' + news.bp.scoreArray[i] + '"><td class="nrange">' + news.bp.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         newsChartRows = newsChartRows + newsChartRow;
     }
 
@@ -480,8 +538,8 @@ function drawNews2Chart() {
 
     //pulse
     newsChartRows = "";
-    for (var i = 0; i < pulseArray.length; i++) {
-        newsChartRow = '<tr class="nrow nchart6 nscore' + pulseScoreArray[i] + '"><td class="nrange">' + pulseArray[i] + '</td>' + newsChartCels + '</tr>';
+    for (var i = 0; i < news.pulse.rangeArray.length; i++) {
+        newsChartRow = '<tr class="nrow nchart6 nscore' + news.pulse.scoreArray[i] + '"><td class="nrange">' + news.pulse.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         newsChartRows = newsChartRows + newsChartRow;
     }
 
@@ -489,8 +547,8 @@ function drawNews2Chart() {
 
     //Conciousness
     newsChartRows = "";
-    for (var i = 0; i < acvpuArray.length; i++) {
-        newsChartRow = '<tr class="nrow nchart7 nscore' + acvpuScoreArray[i] + '"><td class="nrange">' + acvpuArray[i] + '</td>' + newsChartCels + '</tr>';
+    for (var i = 0; i < news.acvpu.rangeArray.length; i++) {
+        newsChartRow = '<tr class="nrow nchart7 nscore' + news.acvpu.scoreArray[i] + '"><td class="nrange">' + news.acvpu.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         newsChartRows = newsChartRows + newsChartRow;
     }
 
@@ -498,8 +556,8 @@ function drawNews2Chart() {
 
     //Temp
     newsChartRows = "";
-    for (var i = 0; i < tempArray.length; i++) {
-        newsChartRow = '<tr class="nrow nchart8 nscore' + tempScoreArray[i] + '"><td class="nrange">' + tempArray[i] + '</td>' + newsChartCels + '</tr>';
+    for (var i = 0; i < news.temp.rangeArray.length; i++) {
+        newsChartRow = '<tr class="nrow nchart8 nscore' + news.temp.scoreArray[i] + '"><td class="nrange">' + news.temp.rangeArray[i] + '</td>' + newsChartCels + '</tr>';
         newsChartRows = newsChartRows + newsChartRow;
     }
 
@@ -508,7 +566,7 @@ function drawNews2Chart() {
 
     //NEWS total
     newsChartRows = "";
-    newsChartRow = '<tr class="nrow nchart9"><td class="nrange"></td>' + newsChartCels + '</tr>';
+    newsChartRow = '<tr class="nrow nchart9"></td>' + newsChartCels + '</tr>';
     newsChartRows = newsChartRows + newsChartRow;
 
     newsChartTable = newsChartTable + newsChartRows + spacerRow;
@@ -521,7 +579,7 @@ function drawNews2Chart() {
     newsChartRows = newsChartRows + newsChartRow;
     newsChartRow = '<tr class="nrow nchart10"><td class="nrange" colspan="2">Escalation of care Y/N</td>' + newsChartCels + '</tr>';
     newsChartRows = newsChartRows + newsChartRow;
-    newsChartRow = '<tr class="nrow nchart10"><td class="nrange" colspan="2">Entered by initials</td>' + newsChartCels + '</tr>';
+    newsChartRow = '<tr class="nrow nchart10"><td class="nrange" colspan="2">Initials</td>' + newsChartCels + '</tr>';
     newsChartRows = newsChartRows + newsChartRow;
 
     newsChartTable = newsChartTable + newsChartRows + spacerRow;
@@ -532,13 +590,13 @@ function drawNews2Chart() {
     $newsChart.find('tbody > tr:nth-child(1)').prepend('<td class="ntitle" rowspan="2">NEWS key<br/><div class="score0">0</div><div class="score1">1</div><div class="score2">2</div><div class="score3">3</div></td>');
     $newsChart.find('tbody > tr:nth-child(4)').prepend('<td class="ntitle" rowspan="7"><div class="abcde">A+B</div>Respirations<div class="titleunits">breaths/min</div></td>');
     $newsChart.find('tbody > tr:nth-child(12)').prepend('<td class="ntitle" rowspan="4"><div class="abcde">A+B</div>SpO<sub>2</sub> scale 1<div class="titleunits">Oxygen saturation %</div></td>');
-    $newsChart.find('tbody > tr:nth-child(17)').prepend('<td class="ntitle" rowspan="8">SpO<sub>2</sub> scale 2<div class="titleunits">Oxygen saturation %</div><div class="titleinfo">Use Scale 2 if target range is 88–92 %, eg in hypercapnic respiratory failure</div > <div class="titlered">ONLY use Scale 2 under the direction of a qualified clinician</div></td>');
+    $newsChart.find('tbody > tr:nth-child(17)').prepend('<td class="ntitle" rowspan="8">SpO<sub>2</sub> scale 2<div class="titleunits">Oxygen saturation %</div><div class="titleinfo">Use Scale 2 if target range is 88–92 %,<br/>eg in hypercapnic respiratory failure</div > <div class="titlered">ONLY use Scale 2 under the direction of a qualified clinician</div></td>');
     $newsChart.find('tbody > tr:nth-child(26)').prepend('<td class="ntitle" rowspan="3">Air or oxygen?</td>');
-    $newsChart.find('tbody > tr:nth-child(30)').prepend('<td class="ntitle" rowspan="14"><div class="abcde">C</div>Blood pressure<div class="titleunits">mmHg</div><div class="titleinfo">Score uses systloic bp only</div></td>');
+    $newsChart.find('tbody > tr:nth-child(30)').prepend('<td class="ntitle" rowspan="14"><div class="abcde">C</div>Blood pressure<div class="titleunits">mmHg</div><div class="titleinfo">Score uses<br/>systloic BP only</div></td>');
     $newsChart.find('tbody > tr:nth-child(45)').prepend('<td class="ntitle" rowspan="12"><div class="abcde">C</div>Pulse<div class="titleunits">Beats/min</div></td>');
-    $newsChart.find('tbody > tr:nth-child(58)').prepend('<td class="ntitle" rowspan="5"><div class="abcde">D</div>Conciousness<div class="titleinfo">Score for NEW onset of confusion (no score if chronic)</div></td>');
+    $newsChart.find('tbody > tr:nth-child(58)').prepend('<td class="ntitle" rowspan="5"><div class="abcde">D</div>Conciousness<div class="titleinfo">Score for NEW<br/>onset of confusion<br/>(no score if chronic)</div></td>');
     $newsChart.find('tbody > tr:nth-child(64)').prepend('<td class="ntitle" rowspan="6"><div class="abcde">E</div>Temperature<div class="titleunits">&#8451;</div></td>');
-    $newsChart.find('tbody > tr:nth-child(71)').prepend('<td class="ntitle">NEWS TOTAL</td>');
+    $newsChart.find('tbody > tr:nth-child(71)').prepend('<td class="ntitle" colspan="2">NEWS TOTAL</td>');
 
     populateNewsChart();
 
@@ -636,13 +694,14 @@ function populateNewsChart() {
                 val = obs.resp;
                 row = 4;
                 if ($.isNumeric(val)) {
-                    for (var x = 0; x < respMaxArray.length; x++) {
-                        if ((val * 1 >= respMinArray[x] * 1) && (val * 1 <= respMaxArray[x] * 1)) {
+                    for (var x = 0; x < news.resp.maxArray.length; x++) {
+                        if ((val * 1 >= news.resp.minArray[x] * 1) && (val * 1 <= news.resp.maxArray[x] * 1)) {
                             row = row + x;
-                            score = respScoreArray[x];
+                            score = news.resp.scoreArray[x];
                             newstotal += score * 1;
                             newstotalstr = newstotalstr + "resp [" + score + "]";
                             if (score == 3) { redscore = true };
+                            obs.respscore = score;
                             title = "Respiration " + val + " breaths/min";
                         }
                     }
@@ -662,13 +721,10 @@ function populateNewsChart() {
 
 
                 if ((flow != '') && (flow != undefined)) {
-                    title = "Oxygen sats " + val + " on oxygen " + flow + "L/min";
+                    title = "Oxygen sats " + val + "% on oxygen " + flow + "L/min";
                 } else {
-                    title = "Oxygen sats " + val + " on air";
+                    title = "Oxygen sats " + val + "% on air";
                 }
-                //if ((percent != '') && (percent != undefined)) {
-                //    title += " " + percent + "%";
-                //}
                 if ((codename != '') && (codename != undefined)) {
                     title += "<br/>via " + codename + " " + code + "";
                 }
@@ -692,13 +748,14 @@ function populateNewsChart() {
                     if (scale == '1') {
                         row = 12;
                         if ($.isNumeric(val)) {
-                            for (var x = 0; x < ox1MaxArray.length; x++) {
-                                if ((val * 1 >= ox1MinArray[x] * 1) && (val * 1 <= ox1MaxArray[x] * 1)) {
+                            for (var x = 0; x < news.sat1.maxArray.length; x++) {
+                                if ((val * 1 >= news.sat1.minArray[x] * 1) && (val * 1 <= news.sat1.maxArray[x] * 1)) {
                                     row = row + x;
-                                    score = ox1ScoreArray[x];
+                                    score = news.sat1.scoreArray[x];
                                     newstotal += score * 1;
                                     newstotalstr = newstotalstr + ", sats [" + score + "]";
                                     if (score == 3) { redscore = true };
+                                    obs.oxsatscore = score;
                                 }
                             }
                         }
@@ -711,17 +768,18 @@ function populateNewsChart() {
                             row = 17;
                         } else {
                             start = 3;
-                            end = ox2MaxArray.length
+                            end = news.sat2.maxArray.length
                             row = 17;
                         }
                         if ($.isNumeric(val)) {
                             for (var x = start; x < end; x++) {
-                                if ((val * 1 >= ox2MinArray[x] * 1) && (val * 1 <= ox2MaxArray[x] * 1)) {
+                                if ((val * 1 >= news.sat2.minArray[x] * 1) && (val * 1 <= news.sat2.maxArray[x] * 1)) {
                                     row = row + x;
-                                    score = ox2ScoreArray[x];
+                                    score = news.sat2.scoreArray[x];
                                     newstotal += score * 1;
                                     newstotalstr = newstotalstr + ", sats [" + score + "]";
                                     if (score == 3) { redscore = true };
+                                    obs.oxsatscore = score;
                                     break; //break so as to miss >=93 on no oxygen
                                 }
                             }
@@ -753,6 +811,7 @@ function populateNewsChart() {
                 } else if (val != undefined) {
                     val = val + "L";
                     score = 2;
+                    obs.oxscore = score;
                     newstotal += score * 1;
                     newstotalstr = newstotalstr + ", oxygen [" + score + "]";
                     if (score == 3) { redscore = true };
@@ -773,15 +832,15 @@ function populateNewsChart() {
                 //bp systolic
                 val = obs.bps;
                 row = 30;
-                //val = val.replace('%', '');
                 if ($.isNumeric(val)) {
-                    for (var x = 0; x < bpMaxArray.length; x++) {
-                        if ((val * 1 >= bpMinArray[x] * 1) && (val * 1 <= bpMaxArray[x] * 1)) {
+                    for (var x = 0; x < news.bp.maxArray.length; x++) {
+                        if ((val * 1 >= news.bp.minArray[x] * 1) && (val * 1 <= news.bp.maxArray[x] * 1)) {
                             row = row + x;
-                            score = bpScoreArray[x];
+                            score = news.bp.scoreArray[x];
                             newstotal += score * 1;
                             newstotalstr = newstotalstr + ", bp [" + score + "]";
                             if (score == 3) { redscore = true };
+                            obs.bpscore = score;
                         }
                     }
                 }
@@ -791,21 +850,22 @@ function populateNewsChart() {
 
 
                 //bp diastolic and range
+                sys = obs.bps;
                 dia = obs.bpd;
                 startrow = 30
                 row = 30;
                 if ($.isNumeric(dia)) {
-                    for (var x = 0; x < bpMaxArray.length; x++) {
+                    for (var x = 0; x < news.bp.maxArray.length; x++) {
                         if ($.isNumeric(sys)) {
-                            if ((sys * 1 >= bpMinArray[x] * 1) && (sys * 1 <= bpMaxArray[x] * 1)) {
+                            if ((sys * 1 >= news.bp.minArray[x] * 1) && (sys * 1 <= news.bp.maxArray[x] * 1)) {
                                 plotChart(startrow + x, col, null, 'systolic');
                             }
-                            if ((sys * 1 >= bpMinArray[x] * 1) && (dia * 1 <= bpMinArray[x] * 1)) {
+                            if ((sys * 1 >= news.bp.minArray[x] * 1) && (dia * 1 <= news.bp.minArray[x] * 1)) {
                                 plotChart(startrow + x, col, null, 'diastolicrange', 'BP ' + sys + '/' + dia + ' mmHg');
                             }
                         }
 
-                        if ((dia * 1 >= bpMinArray[x] * 1) && (dia * 1 <= bpMaxArray[x] * 1)) {
+                        if ((dia * 1 >= news.bp.minArray[x] * 1) && (dia * 1 <= news.bp.maxArray[x] * 1)) {
                             row = row + x;
                         }
                     }
@@ -821,13 +881,14 @@ function populateNewsChart() {
                 row = 45;
 
                 if ($.isNumeric(val)) {
-                    for (var x = 0; x < pulseMaxArray.length; x++) {
-                        if ((val * 1 >= pulseMinArray[x] * 1) && (val * 1 <= pulseMaxArray[x] * 1)) {
+                    for (var x = 0; x < news.pulse.maxArray.length; x++) {
+                        if ((val * 1 >= news.pulse.minArray[x] * 1) && (val * 1 <= news.pulse.maxArray[x] * 1)) {
                             row = row + x;
-                            score = pulseScoreArray[x];
+                            score = news.pulse.scoreArray[x];
                             newstotal += score * 1;
                             newstotalstr = newstotalstr + ", pulse [" + score + "]";
                             if (score == 3) { redscore = true };
+                            obs.pulsescore = score;
                             title = "Pulse " + val + " beats/min";
                             if (obs.pulsepattern != undefined) {
                                 title = title + " " + obs.pulsepattern.toLowerCase();
@@ -851,21 +912,22 @@ function populateNewsChart() {
                     } else {
                         if (val == 'C') {
                             row = row + 1;
-                            score = acvpuScoreArray[1];
+                            score = news.acvpu.scoreArray[1];
                         } else if (val == 'V') {
                             row = row + 2;
-                            score = acvpuScoreArray[2];
+                            score = news.acvpu.scoreArray[2];
                         } else if (val == 'P') {
                             row = row + 3;
-                            score = acvpuScoreArray[3];
+                            score = news.acvpu.scoreArray[3];
                         } else if (val == 'U') {
                             row = row + 4;
-                            score = acvpuScoreArray[4];
+                            score = news.acvpu.scoreArray[4];
                         }
                     }
                     newstotal += score * 1;
                     newstotalstr = newstotalstr + ", acvpu [" + score + "]";
                     if (score == 3) { redscore = true };
+                    obs.acvpuscore = score;
                     plotChart(row, col, val, plotclass, title);
                 }
 
@@ -874,14 +936,15 @@ function populateNewsChart() {
                 val = obs.temp;
                 row = 64;
                 if ($.isNumeric(val)) {
-                    for (var x = 0; x < tempMaxArray.length; x++) {
-                        if ((val * 1 >= tempMinArray[x] * 1) && (val * 1 <= tempMaxArray[x] * 1)) {
+                    for (var x = 0; x < news.temp.maxArray.length; x++) {
+                        if ((val * 1 >= news.temp.minArray[x] * 1) && (val * 1 <= news.temp.maxArray[x] * 1)) {
                             row = row + x;
-                            score = tempScoreArray[x];
+                            score = news.temp.scoreArray[x];
                             newstotal += score * 1;
                             newstotalstr = newstotalstr + ", temp [" + score + "]";
                             if (score == 3) { redscore = true };
-                            title = "Temp " + val + " celcius";
+                            obs.tempscore = score;
+                            title = "Temp " + val + " Celcius";
                         }
                     }
                 }
@@ -898,15 +961,27 @@ function populateNewsChart() {
                 if (!isNaN(val)) {
                     if ((val > 2) && (val < 5) && (redscore)) {
                         plotclassnews = "yellowrow";
-                        title = "Score 3 in any inidvidual parameter: Urgent ward based response.";
+                        title = newsGuidance.lowmedium.range + ": " + newsGuidance.lowmedium.threshold;
+                        title += "<br/>Repeat: " + newsGuidance.lowmedium.repeat;
+                        title += formatGuidance(newsGuidance.lowmedium.response);
                     } else if ((val > 4) && (val < 7)) {
                         plotclassnews = "orangerow";
-                        title = "Score 5-6: Urgent response required.";
+                        title = newsGuidance.medium.range + ": " + newsGuidance.medium.threshold;
+                        title += "<br/>Repeat: " + newsGuidance.medium.repeat;
+                        title += formatGuidance(newsGuidance.medium.response);
                     } else if ((val > 6) && (val < 21)) {
                         plotclassnews = "redrow";
-                        title = "Score >= 7: Emergency response required.";
+                        title = newsGuidance.high.range + ": " + newsGuidance.high.threshold;
+                        title += "<br/>Repeat: " + newsGuidance.high.repeat;
+                        title += formatGuidance(newsGuidance.high.response);
+                    } else if ((val > 2) && (val < 5)) {
+                        title = newsGuidance.low.range + ": " + newsGuidance.low.threshold;
+                        title += "<br/>Repeat: " + newsGuidance.low.repeat;
+                        title += formatGuidance(newsGuidance.low.response);
                     } else {
-                        title = "Score 1-4: Ward based response.";
+                        title = newsGuidance.none.range + ": " + newsGuidance.none.threshold;
+                        title += "<br/>Repeat: " + newsGuidance.none.repeat;
+                        title += formatGuidance(newsGuidance.none.response);
                     }
                 }
                 if (val != '') {
@@ -917,7 +992,7 @@ function populateNewsChart() {
                     } else {
                         //show NEWS2 title categorisation only
                     }
-                    title = "<b>NEWS score = " + newstotal + "</b><br/><br/>" + title + "<br/><br/>Chart scores: " + newstotalstr + ""; //for testing evaluation only
+                    title = "<b>NEWS total: " + newstotal + "</b><br/><br/>" + title + '<div class="newsscores">Chart scores: ' + newstotalstr + '</div>'; //for testing evaluation only
                     plotChart(row, col, val, plotclassnews, title);
                 }
 
@@ -977,13 +1052,14 @@ function populateNewsChart() {
             $('#newschartcontainer').html($newsChart);
             drawPaths();
             setTimeout(function () {
-                $("table.newstable > tbody > tr > td.nval").tooltip({
+                $("table.newschart > tbody > tr > td.nval").tooltip({
                     classes: {
                         "ui-tooltip": "tooltip"
                     }
                 });
             }, 0);
             setTimeout(function () { highlightColumns(); }, 100);
+
         }
 
     });
@@ -1005,16 +1081,25 @@ function plotChart(row, col, val, pclass, title) {
     };
 }
 
+function formatGuidance(array) {
+    var str = '<div class="newsresponse"><ul>';
+    for (var i = 0; i < array.length; i++) {
+        str += '<li>'+array[i]+'</li>';
+    }
+    str += '</ul></div>';
+    return str;
+}
+
 //Add hover styling to column on chart header hover
 function highlightColumns() {
-    $('table.newstable > tbody > tr.ndate > td.nval').hover(function () {
+    $('table.newschart > tbody > tr.ndate > td.nval').hover(function () {
         var col = $(this).attr("col");
-        $('table.newstable > tbody > tr > td.nval').addClass("colgrey");
-        $('table.newstable > tbody > tr > td.nval.nval' + col).addClass("colhover");
+        $('table.newschart > tbody > tr > td.nval').addClass("colgrey");
+        $('table.newschart > tbody > tr > td.nval.nval' + col).addClass("colhover");
     }, function () {
         var col = $(this).attr("col");
-        $('table.newstable > tbody > tr > td.nval').removeClass("colgrey");
-        $('table.newstable > tbody > tr > td.nval.nval' + col).removeClass("colhover");
+        $('table.newschart > tbody > tr > td.nval').removeClass("colgrey");
+        $('table.newschart > tbody > tr > td.nval.nval' + col).removeClass("colhover");
     });
 }
 
@@ -1050,7 +1135,7 @@ function toggleColour() {
 
 //Remove all SVG and classes
 function removeSvg() {
-    $('table.newstable > tbody > tr > td.nval').removeClass("hideborder");
+    $('table.newschart > tbody > tr > td.nval').removeClass("hideborder");
     setPaths = false;
     $('svg').remove();
 }
@@ -1066,7 +1151,7 @@ function drawPaths() {
     removeSvg();
     setPaths = true;
 
-    var $cell = $('table.newstable > tbody > tr.nchart1 > td.nval1');
+    var $cell = $('table.newschart > tbody > tr.nchart1 > td.nval1');
 
     var cw = $cell.width();
     var ch = $cell.height();
@@ -1080,11 +1165,11 @@ function drawPaths() {
         if ((chart != 4) && (chart != 2 || showScale1) && (chart != 3 || showScale2)) {
 
             // svg positioning
-            var $firstCell = $('table.newstable > tbody > tr.nchart' + chart + ' > td.nval1');
+            var $firstCell = $('table.newschart > tbody > tr.nchart' + chart + ' > td.nval1');
             if ($firstCell.is(":visible")) {
                 var svgtop = $firstCell.position().top - 15;
                 var svgleft = $firstCell.position().left;
-                var sh = $('table.newstable > tbody > tr.nchart' + chart).height() * $('table.newstable > tbody > tr.nchart' + chart).length + 15;
+                var sh = $('table.newschart > tbody > tr.nchart' + chart).height() * $('table.newschart > tbody > tr.nchart' + chart).length + 15;
                 var sw = $("#newschartcontainer").width() - svgleft;
 
                 var svg = d3.select("#newschartcontainer").append("svg")
@@ -1097,7 +1182,7 @@ function drawPaths() {
                 var data = [];
 
                 for (var col = 1; col < 21; col++) {
-                    $cell = $('table.newstable > tbody > tr.nchart' + chart + ' > td.nval' + col + '.plotted');
+                    $cell = $('table.newschart > tbody > tr.nchart' + chart + ' > td.nval' + col + '.plotted');
                     if ($cell.length > 0) {
                         $cell.addClass("hideborder");
                         var pos = $cell.position();
@@ -1105,11 +1190,11 @@ function drawPaths() {
                         var xval = Math.round(pos.left + (cw / 2) + 2) - svgleft;
                         var yval = Math.round(pos.top + (ch / 2) + 1) - svgtop;
                         var y2val = yval;
-                        var $cell2 = $('table.newstable > tbody > tr.nchart' + chart + ' > td.nval' + col + '.diastolic');
+                        var $cell2 = $('table.newschart > tbody > tr.nchart' + chart + ' > td.nval' + col + '.diastolic');
                         if ($cell2.length > 0) {
                             var pos2 = $cell2.position();
                             var y2val = Math.round(pos2.top + (ch / 2) - ch + 2) - svgtop;
-                            $('table.newstable > tbody > tr.nchart' + chart + ' > td.nval' + col).addClass("hideborder");
+                            $('table.newschart > tbody > tr.nchart' + chart + ' > td.nval' + col).addClass("hideborder");
                         }
                         storeCoordinate(xval, yval, text, y2val, data);
                     }
@@ -1192,4 +1277,5 @@ function drawD3(chart, data, svg) {
         .style("fill", linecolour);
 
 }
+
 

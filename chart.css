@@ -64,7 +64,7 @@ div.buttons {
 }
 
 
-    #newschartcontainer > table.newstable {
+    #newschartcontainer > table.newschart {
         width: 100%;
         table-layout: fixed;
         max-width: 1024px;
@@ -74,23 +74,23 @@ div.buttons {
 
 
 /*default table cell borders*/
-table.newstable > tbody > tr > td {
+table.newschart > tbody > tr > td {
     border: 1px solid #333;
     padding: 0px;
 }
 
 /*table borders*/
-table.newstable > tbody > tr:nth-child(1) > td {
+table.newschart > tbody > tr:nth-child(1) > td {
     border-top: 2px solid #333;
 }
 
 
-table.newstable > tbody > tr:nth-child(75) > td {
+table.newschart > tbody > tr:nth-child(75) > td {
     border-bottom: 2px solid #333;
 }
 
 /*spacer rows*/
-table.newstable > tbody > tr.nspacerow > td {
+table.newschart > tbody > tr.nspacerow > td {
     border-top: 2px solid #333;
     border-bottom: 2px solid #333;
     border-left: 2px solid #fff;
@@ -98,14 +98,14 @@ table.newstable > tbody > tr.nspacerow > td {
     height: 10px;
 }
 
-table.newstable > tbody > tr.nspacerow:last-child > td {
+table.newschart > tbody > tr.nspacerow:last-child > td {
     border-top: 2px solid #333 !important;
     border-bottom: 2px solid #fff;
 }
 
 
 /*column formatting*/
-table.newstable > tbody > tr > td.ntitle {
+table.newschart > tbody > tr > td.ntitle {
     width: 80px;
     background: #0066cc;
     color: white;
@@ -114,29 +114,29 @@ table.newstable > tbody > tr > td.ntitle {
     padding: 5px;
 }
 
-    table.newstable > tbody > tr > td.ntitle > div.titleunits {
+    table.newschart > tbody > tr > td.ntitle > div.titleunits {
         font: bold 8px arial;
         white-space: nowrap;
     }
 
 
-    table.newstable > tbody > tr > td.ntitle > div.titleinfo {
+    table.newschart > tbody > tr > td.ntitle > div.titleinfo {
         font: bold 8px arial;
         color: #ddd;
-        padding: 2px;
+        padding-top: 3px;
     }
 
-    table.newstable > tbody > tr > td.ntitle > div.abcde {
+    table.newschart > tbody > tr > td.ntitle > div.abcde {
         font: bold 24px arial;
         color: #798FC8;
     }
 
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle {
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle {
     background: #ffffff;
     color: #000;
 }
 
-    table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div {
+    table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle > div {
         width: 13px;
         padding: 1px;
         display: inline-block;
@@ -150,7 +150,7 @@ table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle {
 
 
 
-table.newstable > tbody > tr > td.nrange {
+table.newschart > tbody > tr > td.nrange {
     width: 60px;
     font: bold 10px arial;
     text-align: right;
@@ -159,7 +159,7 @@ table.newstable > tbody > tr > td.nrange {
     border-right: 2px solid #333;
 }
 
-table.newstable > tbody > tr > td.nval {
+table.newschart > tbody > tr > td.nval {
     width: 30px;
     font: bold 10px arial;
     text-align: center;
@@ -168,11 +168,11 @@ table.newstable > tbody > tr > td.nval {
     background: #fff;
 }
 
-    table.newstable > tbody > tr > td.nval.colgrey {
+    table.newschart > tbody > tr > td.nval.colgrey {
         background: #eee;
     }
 
-        table.newstable > tbody > tr > td.nval.colgrey.colhover {
+        table.newschart > tbody > tr > td.nval.colgrey.colhover {
             background: #fff;
             border-left: 2px solid #000 !important;
             border-right: 2px solid #000 !important;
@@ -181,11 +181,11 @@ table.newstable > tbody > tr > td.nval {
 
 
 /*date/time row specific formatting*/
-table.newstable > tbody > tr.ndate > td.nval {
+table.newschart > tbody > tr.ndate > td.nval {
     font: bold 10px arial;
 }
 
-table.newstable > tbody > tr.ntime > td.nval {
+table.newschart > tbody > tr.ntime > td.nval {
     font: normal 10px arial;
 }
 
@@ -194,141 +194,37 @@ table.newstable > tbody > tr.ntime > td.nval {
 Colour scheme
 ----------*/
 
-/*orginal RAG scheme (key and score bands)*/
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score0 {
-    background: #ffffff;
-}
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score1 {
-    background: #ffffcc;
-}
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score2 {
-    background: #ffeeaa;
-}
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score3 {
-    background: #ffcccc;
-}
-
-table.newstable > tbody > tr.nscore1 > td.nval {
-    background: #ffffcc;
-}
-
-table.newstable > tbody > tr.nscore2 > td.nval {
-    background: #ffeeaa;
-}
-
-table.newstable > tbody > tr.nscore3 > td.nval {
-    background: #ffcccc;
-}
-
-/*colors NEWS2 - comment out to revert to original*/
-
-
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score0 {
-    background: #ffffff;
-}
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score1 {
-    background: #FFF2AC;
-}
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score2 {
-    background: #FCC98A;
-}
-
-table.newstable > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score3 {
-    background: #F69781;
-}
-
-
-table.newstable > tbody > tr.nscore1 > td.nval {
-    background: #FFF2AC;
-}
-
-table.newstable > tbody > tr.nscore2 > td.nval {
-    background: #FCC98A;
-}
-
-table.newstable > tbody > tr.nscore3 > td.nval {
-    background: #F69781;
-}
-
-table.newstable > tbody > tr.nscore1 > td.nval.plotted.colgrey.colhover {
-    background: #FFF2AC !important;
-}
-
-table.newstable > tbody > tr.nscore2 > td.nval.plotted.colgrey.colhover {
-    background: #FCC98A !important;
-}
-
-table.newstable > tbody > tr.nscore3 > td.nval.plotted.colgrey.colhover {
-    background: #F69781 !important;
-}
-
-
-
-table.newstable > tbody > tr > td.yellowrow {
-    background: #FFF2AC !important;
-}
-
-table.newstable > tbody > tr > td.orangerow {
-    background: #FCC98A !important;
-}
-
-table.newstable > tbody > tr > td.redrow {
-    background: #F69781 !important;
-}
-
-
-#recent-obs-table > tbody > tr.yellowrowlight > td {
-    background: #FFF2AC !important;
-}
-
-#recent-obs-table > tbody > tr.orangerowlight > td {
-    background: #FCC98A !important;
-}
-
-#recent-obs-table > tbody > tr.redrowlight > td {
-    background: #F69781 !important;
-}
-
-
-
 /*plotted values formatting*/
-table.newstable > tbody > tr > td.nval.plotted {
+table.newschart > tbody > tr > td.nval.plotted {
     border-top: 2px solid #0066cc;
     border-left: 2px solid #0066cc;
     border-right: 2px solid #0066cc;
     border-bottom: 2px solid #0066cc;
 }
 /*plotted BP value range formatting*/
-table.newstable > tbody > tr > td.nval.systolic {
+table.newschart > tbody > tr > td.nval.systolic {
     border-bottom: 1px solid #333;
 }
 
-table.newstable > tbody > tr > td.nval.diastolicrange {
+table.newschart > tbody > tr > td.nval.diastolicrange {
     border-left: 2px solid #0066cc;
     border-right: 2px solid #0066cc;
     border-bottom: 1px solid #333;
 }
 
-table.newstable > tbody > tr > td.nval.diastolic {
+table.newschart > tbody > tr > td.nval.diastolic {
     border-left: 2px solid #0066cc;
     border-right: 2px solid #0066cc;
     border-bottom: 2px solid #0066cc;
 }
 
-table.newstable > tbody > tr > td.bpband {
+table.newschart > tbody > tr > td.bpband {
     border-left: 3px solid #0066cc;
 }
 
 
 /*hide plotted border styling and text when d3 chart apllied*/
-table.newstable > tbody > tr > td.hideborder {
+table.newschart > tbody > tr > td.hideborder {
     border: 1px solid #333 !important;
     border-top: 1px solid #333 !important;
     border-bottom: 1px solid #333 !important;
@@ -337,9 +233,110 @@ table.newstable > tbody > tr > td.hideborder {
     font-size: 0;
 }
 
-table.newstable > tbody > tr > td.diastolic.hideborder {
+table.newschart > tbody > tr > td.diastolic.hideborder {
     font-size: 10px;
 }
+
+
+/*NEWS2 risk colors */
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score0 {
+    background: #ffffff;
+}
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score1 {
+    background: #FFF2AC;
+}
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score2 {
+    background: #FCC98A;
+}
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle > div.score3 {
+    background: #F69781;
+}
+
+
+table.newschart > tbody > tr.nscore1 > td.nval {
+    background: #FFF2AC;
+}
+
+table.newschart > tbody > tr.nscore2 > td.nval {
+    background: #FCC98A;
+}
+
+table.newschart > tbody > tr.nscore3 > td.nval {
+    background: #F69781;
+}
+
+table.newschart > tbody > tr.nscore1 > td.nval.plotted.colgrey.colhover {
+    background: #FFF2AC !important;
+}
+
+table.newschart > tbody > tr.nscore2 > td.nval.plotted.colgrey.colhover {
+    background: #FCC98A !important;
+}
+
+table.newschart > tbody > tr.nscore3 > td.nval.plotted.colgrey.colhover {
+    background: #F69781 !important;
+}
+
+table.newschart > tbody > tr > td.yellowrow {
+    background: #FFF2AC !important;
+}
+
+table.newschart > tbody > tr > td.orangerow {
+    background: #FCC98A !important;
+}
+
+table.newschart > tbody > tr > td.redrow {
+    background: #F69781 !important;
+}
+
+
+/*alternate RAG scheme*/
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.altcolor.ntitle > div.score0 {
+    background: #ffffff;
+}
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.altcolor.ntitle > div.score1 {
+    background: #ffffcc;
+}
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.altcolor.ntitle > div.score2 {
+    background: #ffeeaa;
+}
+
+table.newschart > tbody > tr.nrow.nchart0.ndate > td.altcolor.ntitle > div.score3 {
+    background: #ffcccc;
+}
+
+table.newschart > tbody > tr.nscore1 > td.altcolor.nval {
+    background: #ffffcc;
+}
+
+table.newschart > tbody > tr.nscore2 > td.altcolor.nval {
+    background: #ffeeaa;
+}
+
+table.newschart > tbody > tr.nscore3 > td.altcolor.nval {
+    background: #ffcccc;
+}
+
+table.newschart > tbody > tr > td.altcolor.yellowrow {
+    background: #ffffcc !important;
+}
+
+table.newschart > tbody > tr > td.altcolor.orangerow {
+    background: #ffeeaa !important;
+}
+
+table.newschart > tbody > tr > td.altcolor.redrow {
+    background: #ffcccc !important;
+}
+
+
 
 /*chart specific formatting*/
 
@@ -359,6 +356,7 @@ table.newstable > tbody > tr > td.diastolic.hideborder {
 }
 
     #newschartcontainer > table > tbody > tr.nrow.nchart3 > td.ntitle > div.titlered {
+        margin: 0px;
         margin-top: 5px;
         font: bold 8px arial;
         color: red;
@@ -381,45 +379,52 @@ div.obstitledatetime {
 
 
 /*hide O2 delivery scale 2 chart by default*/
-table.newstable > tbody > tr.nchart3 > td {
+table.newschart > tbody > tr.nchart3 > td {
     /* display: none*/
 }
 /*add split section on O2 delivery scale 2 (with/without O2)*/
-table.newstable > tbody > tr.nchartsplit > td.nrange {
+table.newschart > tbody > tr.nchartsplit > td.nrange {
     border-bottom: 1px solid #333;
 }
 
-table.newstable > tbody > tr.nchartsplit > td.nval {
+table.newschart > tbody > tr.nchartsplit > td.nval {
     border-bottom: 1px solid #333;
 }
 
 /*chart 9 (NEWS total)*/
-table.newstable > tbody > tr.nchart9 > td {
+table.newschart > tbody > tr.nchart9 > td {
     font: bold 12px arial;
 }
 
-    table.newstable > tbody > tr.nchart9 > td.nval {
+    table.newschart > tbody > tr.nchart9 > td.nval {
         font: bold 14px arial;
         /*background: #ddd;*/
     }
 
-    table.newstable > tbody > tr.nchart9 > td.plotted {
+    table.newschart > tbody > tr.nchart9 > td.plotted {
         border: 1px solid #0066cc;
     }
 /*chart 10 (bottom section repeat hrs etc)*/
-table.newstable > tbody > tr.nchart10 > td.plotted {
+table.newschart > tbody > tr.nchart10 > td.plotted {
     border: 1px solid #333;
 }
 
-table.newstable > tbody > tr.nchart10 > td {
+table.newschart > tbody > tr.nchart10 > td {
     padding: 2px;
 }
 
-table.newstable > tbody > tr.nchart10 > td {
+table.newschart > tbody > tr.nchart10 > td {
     padding: 2px;
 }
 
+div.newsresponse {
+    text-align: left;
+    font: normal 9px arial;
+}
 
+div.newsscores {
+    font: normal 8px arial;
+}
 /*D3 svg styling*/
 #newschartcontainer {
     position: relative;
