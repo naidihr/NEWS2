@@ -37,6 +37,10 @@ h1 {
     font: bold 20px arial;
 }
 
+sub{
+    font-size: 50%;
+}
+
 div.buttons {
     width: 160px;
     float: right;
