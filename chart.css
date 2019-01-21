@@ -468,7 +468,7 @@ svg .linedash {
     border-radius: 5px;
     margin: 20px;
     text-align: center;
-    font: normal 13px arial;
+    font: normal 14px arial;
     font-stretch: condensed;
     text-decoration: none;
     box-shadow: 0 0 10px #0066cc;
@@ -479,13 +479,13 @@ span.red {
 }
 
 div.obstitledatetime {
-    font: bold 10px arial;
+    font: bold 11px arial;
     padding: 2px;
 }
 
 div.newsresponse {
     text-align: left;
-    font: normal 9px arial;
+    font: normal 11px arial;
 }
 
 div.newsscores {

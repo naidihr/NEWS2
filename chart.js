@@ -1010,7 +1010,7 @@ function populateNewsChart() {
                     //validate form calculation safety check. Flag any difference between the submitted data score and chart calculation - e.g. if patient moved from Ox sat scale 1 to scale 2.
                     if (obs.newstotal != newstotal) {
                         val = val + "*";
-                        title = title + "<br/><br/>*The calculated NEWS2 total shown on the chart [" + newstotal + "] differs form original NEWS2 score calculated on the form [" + obs.newstotal + "].";
+                        title = title + "*Please note: The calculated NEWS2 total shown on the chart [" + newstotal + "] differs form original NEWS2 score calculated on the form [" + obs.newstotal + "].<br/><br/>";
                     } else {
                         //show NEWS2 title categorisation only
                     }
