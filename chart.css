@@ -173,7 +173,8 @@ table.newschart > tbody > tr > td.nval {
     font: bold 10px arial;
     text-align: center;
     width: auto;
-    height: 15px;
+    height:auto;
+    min-height: 15px;
     background: #fff;
 }
 
