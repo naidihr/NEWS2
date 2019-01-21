@@ -114,8 +114,7 @@ table.newschart > tbody > tr.nspacerow:last-child > td {
 
 /*column formatting*/
 table.newschart > tbody > tr > td.ntitle {
-    width: 80px !important;
-    max-width: 80px;
+    width: 90px !important;
     background: #0066cc;
     color: white;
     font: bold 12px arial;
