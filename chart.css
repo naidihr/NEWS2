@@ -114,7 +114,8 @@ table.newschart > tbody > tr.nspacerow:last-child > td {
 
 /*column formatting*/
 table.newschart > tbody > tr > td.ntitle {
-    width: 80px;
+    width: 80px !important;
+    max-width: 80px;
     background: #0066cc;
     color: white;
     font: bold 12px arial;
@@ -150,7 +151,7 @@ table.newschart > tbody > tr.nrow.nchart0.ndate > td.ntitle {
         display: inline-block;
         text-align: center;
         color: #000;
-        margin-right: 3px;
+        margin-right: 2px;
         margin-top: 2px;
         border: 1px solid #000;
     }
@@ -171,7 +172,7 @@ table.newschart > tbody > tr > td.nval {
     width: 30px;
     font: bold 10px arial;
     text-align: center;
-    width: 4%;
+    width: auto;
     height: 15px;
     background: #fff;
 }
@@ -364,15 +365,35 @@ table.newschart > tbody > tr > td.altcolor.redrow {
 }
 
     #newschartcontainer > table > tbody > tr.nrow.nchart3 > td.ntitle > div.titlered {
-        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
         margin-top: 5px;
+        margin-left: -5px;
+        margin-right: -5px;
+        margin-bottom: -5px;
         font: bold 8px arial;
         color: red;
         background: white;
-        padding: 2px;
-        color: #ff0000;
-        border: 1px solid #000;
+        padding: 5px;
+        padding-top: 15px;
     }
+
+
+        #newschartcontainer > table > tbody > tr.nrow.nchart3 > td.ntitle > div.titlered:before {
+            box-sizing: border-box;
+            content: '';
+            display: block;
+            position: absolute;
+            margin: 0px;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 0px;
+            border-top: 10px solid #B1BBDE;
+            border-bottom: 10px solid transparent;
+            border-left: 45px solid transparent;
+            border-right: 45px solid transparent;
+        }
 
 
 /*hide O2 delivery scale 2 chart by default*/
@@ -396,7 +417,7 @@ table.newschart > tbody > tr.nchart9 > td {
 
     table.newschart > tbody > tr.nchart9 > td.nval {
         font: bold 14px arial;
-        /*background: #ddd;*/
+        /*  : #ddd;*/
     }
 
     table.newschart > tbody > tr.nchart9 > td.plotted {
@@ -417,14 +438,6 @@ table.newschart > tbody > tr.nchart10 > td {
     padding: 2px;
 }
 
-div.newsresponse {
-    text-align: left;
-    font: normal 9px arial;
-}
-
-div.newsscores {
-    font: normal 8px arial;
-}
 
 /*D3 svg styling*/
 #newschartcontainer {
@@ -468,4 +481,13 @@ span.red {
 div.obstitledatetime {
     font: bold 10px arial;
     padding: 2px;
+}
+
+div.newsresponse {
+    text-align: left;
+    font: normal 9px arial;
+}
+
+div.newsscores {
+    font: normal 8px arial;
 }
