@@ -172,8 +172,7 @@ table.newschart > tbody > tr > td.nval {
     font: bold 10px arial;
     text-align: center;
     width: auto;
-    height:auto;
-    min-height: 15px;
+    height: 15px;
     background: #fff;
 }
 
@@ -367,7 +366,7 @@ table.newschart > tbody > tr > td.altcolor.redrow {
     #newschartcontainer > table > tbody > tr.nrow.nchart3 > td.ntitle > div.titlered {
         box-sizing: border-box;
         position: relative;
-        margin-top: 5px;
+        margin-top: 8px;
         margin-left: -5px;
         margin-right: -5px;
         margin-bottom: -5px;
@@ -391,8 +390,8 @@ table.newschart > tbody > tr > td.altcolor.redrow {
             height: 0px;
             border-top: 10px solid #B1BBDE;
             border-bottom: 10px solid transparent;
-            border-left: 45px solid transparent;
-            border-right: 45px solid transparent;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
         }
 
 
