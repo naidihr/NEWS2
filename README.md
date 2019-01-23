@@ -6,7 +6,7 @@ NEWS2 is the latest version of the National Early Warning Score (NEWS), first pr
 
 This repository contains a sample NEWS2 chart render that can be used to populate NEWS2 observation data via json. The chart validates the NEWS score total, and recalculates the score if the patient is switched to use the hypercapnic oxygen saturation scale.
 
-[Demo Chart](https://naidihr.github.io/NEWS2/chart.html)
+[Demonstration NEWS2 Chart](https://naidihr.github.io/NEWS2/chart.html)
 
 ## How NEWS works
 The NEWS is based on a simple aggregate scoring system in which a score is allocated to physiological measurements, already recorded in routine practice, when patients present to, or are being monitored in hospital. Six simple physiological parameters form the basis of the scoring system:
